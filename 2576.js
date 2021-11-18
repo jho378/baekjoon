@@ -8,6 +8,9 @@ for(i=0; i<7; i++){
     else continue;
 }
 
-const sum = data.reduce((p,c) => p+c, 0);
-const min = data.reduce((p,c) => Math.min(p,c), 101);
-console.log(`${sum}\n${min}`);
+if(data.length===0) console.log(-1);
+else{
+    const sum = data.reduce((p,c) => p+c, 0);
+    const min = data.reduce((p,c) => Math.min(p,c), 101);
+    console.log(`${sum}\n${min}`);
+}
