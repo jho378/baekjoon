@@ -17,4 +17,5 @@ while(i<input.length){
     if(front === back)  special = true;
     i++
 }
-special ? console.log('YES') : console.log('NO');
+if(parseInt(input)===1) console.log('NO');
+else special ? console.log('YES') : console.log('NO');
