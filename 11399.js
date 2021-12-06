@@ -20,3 +20,5 @@ for(let i=0; i<data.length; i++){
     res += data[i]*(i+1);
 }
 console.log(res);
+
+
