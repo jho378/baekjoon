@@ -9,12 +9,13 @@ let cnt = 1;
 let tmp = min;
 let _tmp = max;
 
-while(tmp--){
+while(tmp){
+    
     if(max%tmp===0 && min%tmp===0){
         console.log(tmp);
         break;
     }
-    else continue;
+    else tmp--;
 }
 
 while(true){
