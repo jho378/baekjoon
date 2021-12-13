@@ -20,8 +20,9 @@ for(let i=0; i<N; i++){
 const max = scoreArr.reduce((p,c) => Math.max(p,c), -1);
 
 for(let i=0; i<N; i++){
-    if(scoreArr[i]===max)   res[i] += i;
+    if(scoreArr[i]===max)   res[i] += 1;
 }
+
 
 for(let i=0; i<N; i++){
     if(res[i]!==0)  minCnt = Math.min(countArr[i], minCnt);
@@ -29,6 +30,7 @@ for(let i=0; i<N; i++){
 for(let i=0; i<N; i++){
     if(countArr[i]!==minCnt)    res[i]=0;
 }
+
 for(let i=0; i<N; i++){
     if(res[i]!==0) minTime = Math.min(timeArr[i], minTime);  
 }
