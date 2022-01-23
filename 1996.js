@@ -16,7 +16,6 @@ for(let i=0; i<N; i++){
     data[i] = datas;
 }
 const zero = new Array(N+2).fill(0);
-
 data.push(zero);
 data.unshift(zero);
 
