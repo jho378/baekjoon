@@ -22,5 +22,6 @@ for(let i=0; i<3; i++){
     }
     if(isReal) console.log('OK');
     else console.log('FAKE');
+    
 }
 
