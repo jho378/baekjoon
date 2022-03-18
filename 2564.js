@@ -48,4 +48,5 @@ for(let i=0; i<n; i++){
         else if(X===3 && A===2) distanceSum += N-Y+B;
     }
 }
+
 console.log(distanceSum);
