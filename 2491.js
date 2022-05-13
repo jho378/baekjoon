@@ -4,53 +4,40 @@ const input = fs.readFileSync('a.txt').toString().trim().split('\n');
 const N = parseInt(input[0]);
 const data = input[1].split(' ').map(e => parseInt(e));
 
-let isAscending = true;
-let j=0;
-while(true){
-    if(data[j]===data[j+1]) continue;
-    else if(data[j]>data[j+1]){
-        isAscending = false;
-        break;
+let ascendingMax = 1;
+let descendingMax = 1;
+
+let ascendingCount = 1;
+let descendingCount = 1;
+
+let i = 0;
+while(i < N-1){
+    if (data[i] <= data[i+1]){
+        ascendingCount+=1;
+    }   else {
+        ascendingMax = Math.max(ascendingCount, ascendingMax);
+        ascendingCount=1;
     }
-    else{
-        isAscending = true;
-        break;
+    if (i===N-2){
+        ascendingMax = Math.max(ascendingCount, ascendingMax);
     }
+    i++;
 }
 
-let max = 0;
+i = 0;
 
-let tmp = 0; 
-let i=0;
-let _tmp = 0;
-
-while(i!==N-1){
-    tmp = i;
-    if(isAscending===true){
-        while(true){
-            if(data[i+1]>=data[i]) i++;
-            else{
-                isAscending = false;
-                break;
-            }
-        }
-    }  
-    else{
-        while(true){
-            if(data[i+1]<=data[i]) i++;
-            else{
-                isAscending = true;
-                break;
-            } 
-        }
+while(i < N-1){
+    if (data[i] >= data[i+1]){
+        descendingCount+=1;
+    }   else {
+        descendingMax = Math.max(descendingCount, descendingMax);
+        descendingCount= 1 ;
     }
-    _tmp = i;
-    while(data[_tmp] === data[i]){
-        _tmp--;
+    if (i===N-2){
+        descendingMax = Math.max(descendingCount, descendingMax);
     }
-    _tmp++;
-    max = Math.max(max, i-tmp+1);
-    i = _tmp;
+    i++;
+    
 }
-
+const max = Math.max(ascendingMax, descendingMax);
 console.log(max);
